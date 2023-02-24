@@ -1246,3 +1246,1436 @@ Migrating to CreateDoctors (20230224093602)
   [1m[36mTRANSACTION (30.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(1243157307469133805)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (21.8ms)[0m  [1m[35mCREATE DATABASE "booking_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE "booking_app_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1243157307469133805)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1243157307469133805)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Sam"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "doctors" WHERE "doctors"."email" = $1 LIMIT $2[0m  [["email", "johndoe@gmai.com"], ["LIMIT", 1]]
+  [1m[36mDoctor Create (1.9ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "email", "specialization", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John Doe"], ["email", "johndoe@gmai.com"], ["specialization", "Dermatologist"], ["picture", "https://www.pinnaclecare.com/wp-content/uploads/2017/12/bigstock-African-young-doctor-portrait-28825394.jpg"], ["created_at", "2023-02-24 15:33:21.152884"], ["updated_at", "2023-02-24 15:33:21.152884"]]
+  [1m[36mTRANSACTION (25.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:33:49 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+Zeitwerk::NameError (expected file /home/hp/Public/microverse/Module_6/final_cap/booking-app/app/controllers/api/reservations_controller.rb to define constant Api::ReservationsController, but didn't
+
+      raise Zeitwerk::NameError.new(msg, cref.last)
+      ^^^^^):
+  
+zeitwerk (2.6.7) lib/zeitwerk/loader/callbacks.rb:25:in `on_file_autoloaded'
+zeitwerk (2.6.7) lib/zeitwerk/kernel.rb:31:in `require'
+activesupport (7.0.4.2) lib/active_support/inflector/methods.rb:280:in `const_get'
+activesupport (7.0.4.2) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (7.0.4.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (7.0.4.2) lib/action_dispatch/http/request.rb:90:in `controller_class_for'
+actionpack (7.0.4.2) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (7.0.4.2) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (7.0.4.2) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (7.0.4.2) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.2) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.2) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.2) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (2.0.0) lib/rack/cors.rb:102:in `call'
+railties (7.0.4.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:35:41 +0300
+  
+TypeError (superclass mismatch for class ReservationsController):
+  
+app/controllers/api/reservations_controller.rb:1:in `<main>'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:36:35 +0300
+  
+ArgumentError (Unknown key: :nullify. Valid keys are: :class_name, :anonymous_class, :primary_key, :foreign_key, :dependent, :validate, :inverse_of, :strict_loading, :autosave, :required, :touch, :polymorphic, :counter_cache, :optional, :default):
+  
+app/models/reservation.rb:3:in `<class:Reservation>'
+app/models/reservation.rb:1:in `<main>'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:37:13 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservations"=>{"user_id"=>1, "doctor_id"=>1, "date"=>"2023-02-24 17:18", "details"=>""}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+Completed 400 Bad Request in 91ms (ActiveRecord: 4.4ms | Allocations: 2872)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: reservation
+Did you mean?  reservations):
+  
+app/controllers/api/reservations_controller.rb:44:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started GET "/" for ::1 at 2023-02-24 18:38:26 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/hp/.rvm/gems/ruby-3.1.3/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/hp/.rvm/gems/ruby-3.1.3/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.3ms | Allocations: 580)
+Completed 200 OK in 174ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 4468)
+
+
+Started GET "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:38:50 +0300
+Processing by Api::ReservationsController#index as HTML
+  Parameters: {"user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mReservation Load (41.9ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:6:in `index'
+Completed 200 OK in 57ms (Views: 11.2ms | ActiveRecord: 43.2ms | Allocations: 1768)
+
+
+Started GET "/favicon.ico" for ::1 at 2023-02-24 18:38:51 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/users/1/doctors" for ::1 at 2023-02-24 18:39:11 +0300
+Processing by Api::DoctorsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mDoctor Load (1.0ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/api/doctors_controller.rb:4:in `index'
+Completed 200 OK in 42ms (Views: 20.5ms | ActiveRecord: 8.7ms | Allocations: 6988)
+
+
+Started GET "/api/users" for ::1 at 2023-02-24 18:39:18 +0300
+  
+Zeitwerk::NameError (expected file /home/hp/Public/microverse/Module_6/final_cap/booking-app/app/controllers/api/users_controller.rb to define constant Api::UsersController, but didn't
+
+      raise Zeitwerk::NameError.new(msg, cref.last)
+      ^^^^^):
+  
+zeitwerk (2.6.7) lib/zeitwerk/loader/callbacks.rb:25:in `on_file_autoloaded'
+zeitwerk (2.6.7) lib/zeitwerk/kernel.rb:31:in `require'
+activesupport (7.0.4.2) lib/active_support/inflector/methods.rb:280:in `const_get'
+activesupport (7.0.4.2) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (7.0.4.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (7.0.4.2) lib/action_dispatch/http/request.rb:90:in `controller_class_for'
+actionpack (7.0.4.2) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (7.0.4.2) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (7.0.4.2) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (7.0.4.2) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.6.2) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.2) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.2) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (2.0.0) lib/rack/cors.rb:102:in `call'
+railties (7.0.4.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:39:29 +0300
+Processing by Api::ReservationsController#index as HTML
+  Parameters: {"user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.5ms | Allocations: 896)
+
+
+Started GET "/api/reservations" for ::1 at 2023-02-24 18:40:04 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/reservations"):
+  
+Started GET "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:40:41 +0300
+Processing by Api::ReservationsController#index as HTML
+  Parameters: {"user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.5ms | Allocations: 737)
+
+
+Started GET "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:40:43 +0300
+Processing by Api::ReservationsController#index as HTML
+  Parameters: {"user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 750)
+
+
+Started GET "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:41:15 +0300
+Processing by Api::ReservationsController#index as */*
+  Parameters: {"reservations"=>{"user_id"=>1, "doctor_id"=>1, "date"=>"2023-02-24 17:18", "details"=>""}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.5ms | Allocations: 741)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:41:21 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservations"=>{"user_id"=>1, "doctor_id"=>1, "date"=>"2023-02-24 17:18", "details"=>""}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 183)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: reservation
+Did you mean?  reservations):
+  
+app/controllers/api/reservations_controller.rb:44:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:43:39 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservations"=>{"user_id"=>1, "doctor_id"=>1, "date"=>"2023-02-25 17:18", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 6.2ms | Allocations: 284)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: reservation
+Did you mean?  reservations):
+  
+app/controllers/api/reservations_controller.rb:44:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:47:03 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservations"=>{"user_id"=>1, "doctor_id"=>1, "date"=>"2023-02-25 17:18", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 2.6ms | Allocations: 284)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: reservation
+Did you mean?  reservations):
+  
+app/controllers/api/reservations_controller.rb:44:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:49:29 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservations"=>{"user_id"=>1, "doctor_id"=>1, "date"=>"2023-02-25 17:18", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+Completed 400 Bad Request in 2ms (ActiveRecord: 3.9ms | Allocations: 284)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: reservation
+Did you mean?  reservations):
+  
+app/controllers/api/reservations_controller.rb:43:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:51:28 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservations"=>{"user_id"=>1, "doctor_id"=>1, "date"=>"2023-02-25 17:18", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 3.5ms | Allocations: 279)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: new_reservation
+Did you mean?  reservation):
+  
+app/controllers/api/reservations_controller.rb:44:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:53:15 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservation"=>{"doctor_id"=>1, "user_id"=>1, "date"=>"2023-02-25 17:18", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 152)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: new_reservation
+Did you mean?  reservation):
+  
+app/controllers/api/reservations_controller.rb:44:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:53:24 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservation"=>{"doctor_id"=>1, "user_id"=>1, "date"=>"2023-02-25 17:18", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 152)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: new_reservation
+Did you mean?  reservation):
+  
+app/controllers/api/reservations_controller.rb:44:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:53:45 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservation"=>{"doctor_id"=>1, "user_id"=>1, "date"=>"2023-02-25 17:18", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 152)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: new_reservation
+Did you mean?  reservation):
+  
+app/controllers/api/reservations_controller.rb:44:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:54:00 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"doctor_id"=>"1", "user_id"=>"1", "date"=>"2023-02-25 17:18", "details"=>"Some details", "reservation"=>{"doctor_id"=>"1", "user_id"=>"1", "date"=>"2023-02-25 17:18", "details"=>"Some details"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 158)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: new_reservation
+Did you mean?  reservation):
+  
+app/controllers/api/reservations_controller.rb:44:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:54:26 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"doctor_id"=>"1", "user_id"=>"1", "date"=>"2023-02-25 17:18", "details"=>"Some details", "reservation"=>{"doctor_id"=>"1", "user_id"=>"1", "date"=>"2023-02-25 17:18", "details"=>"Some details"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 158)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: new_reservation
+Did you mean?  reservation):
+  
+app/controllers/api/reservations_controller.rb:44:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:55:27 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"new_reservation"=>{"doctor_id"=>1, "user_id"=>1, "date"=>"2023-02-25 17:18", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:17:in `create'
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:17:in `create'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:17:in `create'
+  [1m[36mReservation Create (37.4ms)[0m  [1m[32mINSERT INTO "reservations" ("doctor_id", "user_id", "date", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["doctor_id", 1], ["user_id", 1], ["date", "2023-02-25"], ["details", "Some details"], ["created_at", "2023-02-24 15:55:27.524693"], ["updated_at", "2023-02-24 15:55:27.524693"]]
+  ↳ app/controllers/api/reservations_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (32.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/reservations_controller.rb:17:in `create'
+Completed 201 Created in 255ms (Views: 0.8ms | ActiveRecord: 82.7ms | Allocations: 17504)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 18:57:25 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservation"=>{"doctor_id"=>1, "user_id"=>1, "date"=>"2023-02-25 17:18", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:17:in `create'
+  [1m[36mDoctor Load (0.6ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:17:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:17:in `create'
+  [1m[36mReservation Create (1.1ms)[0m  [1m[32mINSERT INTO "reservations" ("doctor_id", "user_id", "date", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["doctor_id", 1], ["user_id", 1], ["date", "2023-02-25"], ["details", "Some details"], ["created_at", "2023-02-24 15:57:25.470877"], ["updated_at", "2023-02-24 15:57:25.470877"]]
+  ↳ app/controllers/api/reservations_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (21.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/reservations_controller.rb:17:in `create'
+Completed 201 Created in 84ms (Views: 0.8ms | ActiveRecord: 39.3ms | Allocations: 12517)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 19:09:21 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservations"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 19:09", "details"=>""}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 11.1ms | Allocations: 282)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: reservation
+Did you mean?  reservations):
+  
+app/controllers/api/reservations_controller.rb:43:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 19:09:33 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservations"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 19:09", "details"=>""}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 161)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: reservation
+Did you mean?  reservations):
+  
+app/controllers/api/reservations_controller.rb:43:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 19:09:36 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservations"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 19:09", "details"=>""}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 161)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: reservation
+Did you mean?  reservations):
+  
+app/controllers/api/reservations_controller.rb:43:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 19:09:37 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservations"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 19:09", "details"=>""}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 161)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: reservation
+Did you mean?  reservations):
+  
+app/controllers/api/reservations_controller.rb:43:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 19:10:27 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservations"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 19:10", "details"=>""}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 161)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: reservation
+Did you mean?  reservations):
+  
+app/controllers/api/reservations_controller.rb:43:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 19:10:35 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservations"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 19:10", "details"=>""}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 161)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: reservation
+Did you mean?  reservations):
+  
+app/controllers/api/reservations_controller.rb:43:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 19:10:43 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservations"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 19:10", "details"=>""}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 161)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: reservation
+Did you mean?  reservations):
+  
+app/controllers/api/reservations_controller.rb:43:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 19:13:01 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservations"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 19:13", "details"=>""}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 161)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: reservation
+Did you mean?  reservations):
+  
+app/controllers/api/reservations_controller.rb:43:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 19:13:08 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservations"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 19:13", "details"=>""}, "user_id"=>"1", "doctor_id"=>"1", "reservation"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 161)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: reservation
+Did you mean?  reservations):
+  
+app/controllers/api/reservations_controller.rb:43:in `reservation_params'
+app/controllers/api/reservations_controller.rb:14:in `create'
+Started GET "/static/js/bundle.js" for ::1 at 2023-02-24 19:32:52 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/bundle.js"):
+  
+Started GET "/favicon.ico" for ::1 at 2023-02-24 19:32:53 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/manifest.json" for ::1 at 2023-02-24 19:32:53 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 19:36:29 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 19:36", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 176ms (Views: 0.4ms | ActiveRecord: 17.7ms | Allocations: 18620)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 19:36:37 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 19:36", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 13ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 3174)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 19:36:38 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 19:36", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.9ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 16ms (Views: 0.2ms | ActiveRecord: 2.2ms | Allocations: 3147)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 19:37:31 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 19:37", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 110ms (ActiveRecord: 14.5ms | Allocations: 14323)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be in the past):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 19:40:15 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 19:40", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 16.7ms | Allocations: 11557)
+
+
+  
+ArgumentError (comparison of Date with String failed):
+  
+app/models/reservation.rb:11:in `<'
+app/models/reservation.rb:11:in `date_cannot_be_in_the_past'
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 19:45:21 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 19:46", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 62ms (ActiveRecord: 23.9ms | Allocations: 11762)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be in the past):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 19:45:24 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 19:46", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.7ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 15ms (ActiveRecord: 2.2ms | Allocations: 3248)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be in the past):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 21:44:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (29.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-24 21:45:56", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (16.6ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (32.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 305ms (ActiveRecord: 181.4ms | Allocations: 21626)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be in the past):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 21:49:02 +0300
+Processing by Api::ReservationsController#create as */*
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-25 21:45:56", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mReservation Create (77.3ms)[0m  [1m[32mINSERT INTO "reservations" ("doctor_id", "user_id", "date", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["doctor_id", 1], ["user_id", 1], ["date", "2023-02-25"], ["details", "Some details"], ["created_at", "2023-02-24 18:49:02.823355"], ["updated_at", "2023-02-24 18:49:02.823355"]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (21.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 201 Created in 159ms (Views: 1.0ms | ActiveRecord: 113.3ms | Allocations: 13043)
+
+
+  [1m[36mReservation Load (0.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:03:36 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.6ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 114ms (ActiveRecord: 11.4ms | Allocations: 6725)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:03:44 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 17ms (ActiveRecord: 1.7ms | Allocations: 3669)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:04:57 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 14ms (ActiveRecord: 1.9ms | Allocations: 3430)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:15:04 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 60ms (ActiveRecord: 17.4ms | Allocations: 6530)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:15:07 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 22ms (ActiveRecord: 8.4ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:15:13 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (4.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 24ms (ActiveRecord: 7.1ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:15:14 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.7ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 21ms (ActiveRecord: 1.9ms | Allocations: 3429)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:15:15 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 21ms (ActiveRecord: 2.4ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:15:16 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 21ms (ActiveRecord: 1.7ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:15:17 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 16ms (ActiveRecord: 1.6ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:18:10 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 20ms (ActiveRecord: 2.1ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:18:11 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 22ms (ActiveRecord: 1.9ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:18:12 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 19ms (ActiveRecord: 1.6ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:18:15 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 16ms (ActiveRecord: 2.3ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:18:16 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (1.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 21ms (ActiveRecord: 3.1ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:22:13 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.9ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 16ms (ActiveRecord: 2.4ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:22:14 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 17ms (ActiveRecord: 2.0ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:22:15 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 17ms (ActiveRecord: 2.3ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:22:19 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 14ms (ActiveRecord: 1.4ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:22:22 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 17ms (ActiveRecord: 2.4ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:22:43 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 17ms (ActiveRecord: 1.6ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:22:51 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 14ms (ActiveRecord: 1.3ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:22:59 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 17ms (ActiveRecord: 1.8ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:23:01 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 16ms (ActiveRecord: 3.1ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:23:15 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-27 22:23:10", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mReservation Create (1.9ms)[0m  [1m[32mINSERT INTO "reservations" ("doctor_id", "user_id", "date", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["doctor_id", 1], ["user_id", 1], ["date", "2023-02-27"], ["details", "Some details"], ["created_at", "2023-02-24 19:23:15.952759"], ["updated_at", "2023-02-24 19:23:15.952759"]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (28.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 201 Created in 47ms (Views: 0.6ms | ActiveRecord: 31.2ms | Allocations: 3918)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:23:26 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-27 22:23:10", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mReservation Create (0.7ms)[0m  [1m[32mINSERT INTO "reservations" ("doctor_id", "user_id", "date", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["doctor_id", 1], ["user_id", 1], ["date", "2023-02-27"], ["details", "Some details"], ["created_at", "2023-02-24 19:23:26.636660"], ["updated_at", "2023-02-24 19:23:26.636660"]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (29.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 201 Created in 49ms (Views: 0.5ms | ActiveRecord: 31.4ms | Allocations: 3812)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:24:48 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-27 22:23:10", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mReservation Create (3.7ms)[0m  [1m[32mINSERT INTO "reservations" ("doctor_id", "user_id", "date", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["doctor_id", 1], ["user_id", 1], ["date", "2023-02-27"], ["details", "Some details"], ["created_at", "2023-02-24 19:24:48.133946"], ["updated_at", "2023-02-24 19:24:48.133946"]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (26.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 201 Created in 49ms (Views: 1.3ms | ActiveRecord: 31.6ms | Allocations: 3813)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:25:32 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-27 22:23:10", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mReservation Create (0.6ms)[0m  [1m[32mINSERT INTO "reservations" ("doctor_id", "user_id", "date", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["doctor_id", 1], ["user_id", 1], ["date", "2023-02-27"], ["details", "Some details"], ["created_at", "2023-02-24 19:25:32.728041"], ["updated_at", "2023-02-24 19:25:32.728041"]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (23.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 201 Created in 40ms (Views: 0.6ms | ActiveRecord: 25.5ms | Allocations: 3808)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:26:06 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 13ms (ActiveRecord: 1.4ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:27:06 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 20ms (ActiveRecord: 1.8ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:27:16 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 15ms (ActiveRecord: 1.5ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:27:31 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-28 22:27:26", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.6ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mReservation Create (0.7ms)[0m  [1m[32mINSERT INTO "reservations" ("doctor_id", "user_id", "date", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["doctor_id", 1], ["user_id", 1], ["date", "2023-02-28"], ["details", "Some details"], ["created_at", "2023-02-24 19:27:31.738948"], ["updated_at", "2023-02-24 19:27:31.738948"]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (27.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 201 Created in 53ms (Views: 0.6ms | ActiveRecord: 29.8ms | Allocations: 3809)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:28:29 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-28 22:27:26", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mReservation Create (1.2ms)[0m  [1m[32mINSERT INTO "reservations" ("doctor_id", "user_id", "date", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["doctor_id", 1], ["user_id", 1], ["date", "2023-02-28"], ["details", "Some details"], ["created_at", "2023-02-24 19:28:29.600208"], ["updated_at", "2023-02-24 19:28:29.600208"]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (24.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 201 Created in 45ms (Views: 0.6ms | ActiveRecord: 26.5ms | Allocations: 3808)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:30:23 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-25 22:30:20", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.7ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mReservation Create (0.6ms)[0m  [1m[32mINSERT INTO "reservations" ("doctor_id", "user_id", "date", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["doctor_id", 1], ["user_id", 1], ["date", "2023-02-25"], ["details", "Some details"], ["created_at", "2023-02-24 19:30:23.996501"], ["updated_at", "2023-02-24 19:30:23.996501"]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (30.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 201 Created in 55ms (Views: 0.4ms | ActiveRecord: 33.3ms | Allocations: 3808)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:31:28 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-25 22:31:25", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mReservation Create (0.6ms)[0m  [1m[32mINSERT INTO "reservations" ("doctor_id", "user_id", "date", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["doctor_id", 1], ["user_id", 1], ["date", "2023-02-25"], ["details", "Some details"], ["created_at", "2023-02-24 19:31:28.896079"], ["updated_at", "2023-02-24 19:31:28.896079"]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (20.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 201 Created in 37ms (Views: 0.5ms | ActiveRecord: 22.3ms | Allocations: 3808)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:31:36 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-25 22:31:25", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mReservation Create (0.7ms)[0m  [1m[32mINSERT INTO "reservations" ("doctor_id", "user_id", "date", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["doctor_id", 1], ["user_id", 1], ["date", "2023-02-25"], ["details", "Some details"], ["created_at", "2023-02-24 19:31:36.951454"], ["updated_at", "2023-02-24 19:31:36.951454"]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (30.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 201 Created in 52ms (Views: 0.5ms | ActiveRecord: 32.2ms | Allocations: 3808)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:31:42 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-25 22:31:25", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mReservation Create (0.6ms)[0m  [1m[32mINSERT INTO "reservations" ("doctor_id", "user_id", "date", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["doctor_id", 1], ["user_id", 1], ["date", "2023-02-25"], ["details", "Some details"], ["created_at", "2023-02-24 19:31:42.413936"], ["updated_at", "2023-02-24 19:31:42.413936"]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (57.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 201 Created in 87ms (Views: 0.6ms | ActiveRecord: 59.4ms | Allocations: 3812)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:31:45 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-25 22:31:25", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.6ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mReservation Create (0.5ms)[0m  [1m[32mINSERT INTO "reservations" ("doctor_id", "user_id", "date", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["doctor_id", 1], ["user_id", 1], ["date", "2023-02-25"], ["details", "Some details"], ["created_at", "2023-02-24 19:31:45.196036"], ["updated_at", "2023-02-24 19:31:45.196036"]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (267.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 201 Created in 284ms (Views: 0.5ms | ActiveRecord: 269.1ms | Allocations: 3808)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:31:46 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"2023-02-25 22:31:25", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mReservation Create (1.0ms)[0m  [1m[32mINSERT INTO "reservations" ("doctor_id", "user_id", "date", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["doctor_id", 1], ["user_id", 1], ["date", "2023-02-25"], ["details", "Some details"], ["created_at", "2023-02-24 19:31:46.768566"], ["updated_at", "2023-02-24 19:31:46.768566"]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (27.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 201 Created in 61ms (Views: 0.6ms | ActiveRecord: 30.6ms | Allocations: 3808)
+
+
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:32:37 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 15ms (ActiveRecord: 1.6ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:32:44 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.7ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 23ms (ActiveRecord: 5.2ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:32:47 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (2.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 24ms (ActiveRecord: 8.0ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:32:50 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 27ms (ActiveRecord: 1.6ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+Started POST "/api/users/1/doctors/1/reservations" for ::1 at 2023-02-24 22:34:48 +0300
+Processing by Api::ReservationsController#create as HTML
+  Parameters: {"reservation"=>{"user_id"=>1, "doctor_id"=>"1", "date"=>"", "details"=>"Some details"}, "user_id"=>"1", "doctor_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mDoctor Load (1.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/reservations_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 25ms (ActiveRecord: 2.7ms | Allocations: 3428)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Date can't be blank):
+  
+app/controllers/api/reservations_controller.rb:16:in `create'
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Exists? (15.8ms)[0m  [1m[34mSELECT 1 AS one FROM "doctors" WHERE "doctors"."email" = $1 LIMIT $2[0m  [["email", "dr.rebecca.wong@gmail.com"], ["LIMIT", 1]]
+  [1m[36mDoctor Create (30.6ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "email", "specialization", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Rebecca Wong"], ["email", "dr.rebecca.wong@gmail.com"], ["specialization", " Cardiologist"], ["picture", "https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"], ["created_at", "2023-02-24 20:00:56.154045"], ["updated_at", "2023-02-24 20:00:56.154045"]]
+  [1m[36mTRANSACTION (22.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "doctors" WHERE "doctors"."email" = $1 LIMIT $2[0m  [["email", "dr.mohammed.ali@gmail.com"], ["LIMIT", 1]]
+  [1m[36mDoctor Create (1.0ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "email", "specialization", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mohammed Ali"], ["email", "dr.mohammed.ali@gmail.com"], ["specialization", "Neurologist"], ["picture", "https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg?crop=0.66698xw:1xh;center,top&resize=1200:*"], ["created_at", "2023-02-24 20:00:56.247177"], ["updated_at", "2023-02-24 20:00:56.247177"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "doctors" WHERE "doctors"."email" = $1 LIMIT $2[0m  [["email", "dr.olivia.davis@gmail.com"], ["LIMIT", 1]]
+  [1m[36mDoctor Create (0.7ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "email", "specialization", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Olivia Davis"], ["email", "dr.olivia.davis@gmail.com"], ["specialization", "Dermatologist"], ["picture", "https://www.yourfreecareertest.com/wp-content/uploads/2018/01/how_to_become_a_doctor-300x200.jpg"], ["created_at", "2023-02-24 20:00:56.265786"], ["updated_at", "2023-02-24 20:00:56.265786"]]
+  [1m[36mTRANSACTION (11.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "doctors" WHERE "doctors"."email" = $1 LIMIT $2[0m  [["email", "dr.ethan.lee@gmail.com"], ["LIMIT", 1]]
+  [1m[36mDoctor Create (0.6ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "email", "specialization", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ethan Lee"], ["email", "dr.ethan.lee@gmail.com"], ["specialization", " Pediatrician"], ["picture", "https://royalphnompenhhospital.com/royalpp/storage/app/uploads/2/2022-06-30/dr_sarisak_01.jpg"], ["created_at", "2023-02-24 20:00:56.291672"], ["updated_at", "2023-02-24 20:00:56.291672"]]
+  [1m[36mTRANSACTION (8.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "doctors" WHERE "doctors"."email" = $1 LIMIT $2[0m  [["email", "dr.sophia.patel@gmail.com"], ["LIMIT", 1]]
+  [1m[36mDoctor Create (1.0ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "email", "specialization", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sophia Patel"], ["email", "dr.sophia.patel@gmail.com"], ["specialization", " Psychiatrist"], ["picture", "https://www.phoenixmag.com/wp-content/uploads/2022/03/PHM0422TD17-1200x800.jpg"], ["created_at", "2023-02-24 20:00:56.311365"], ["updated_at", "2023-02-24 20:00:56.311365"]]
+  [1m[36mTRANSACTION (11.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
