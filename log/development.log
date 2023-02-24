@@ -1216,3 +1216,33 @@ puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
 puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
 puma (5.6.5) lib/puma/server.rb:443:in `process_client'
 puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (2312.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (487.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (24.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1243157307469133805)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (14.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateReservations (20230223134017)
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (298.8ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "doctor_id" integer, "user_id" integer, "date" date, "details" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (52.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230223134017"]]
+  [1m[36mTRANSACTION (31.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20230223234917)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (332.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230223234917"]]
+  [1m[36mTRANSACTION (27.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUniqueIndexToUsersUsername (20230224075846)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (202.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230224075846"]]
+  [1m[36mTRANSACTION (47.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDoctors (20230224093602)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (237.5ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" bigserial primary key, "name" character varying, "email" character varying, "specialization" text, "picture" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230224093602"]]
+  [1m[36mTRANSACTION (27.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (26.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-02-24 09:44:45.119706"], ["updated_at", "2023-02-24 09:44:45.119706"]]
+  [1m[36mTRANSACTION (30.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(1243157307469133805)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
