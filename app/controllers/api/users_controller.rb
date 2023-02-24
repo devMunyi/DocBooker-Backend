@@ -1,15 +1,13 @@
 class UsersController < ApplicationController
-  '''
-  The User model has a unique index on the username column.
-  If a user tries to create a record with a non-unique username, 
-  the create action will return a 422 Unprocessable Entity status code with an error message
-  indicating that the username has already been taken. Similarly, 
-  if a user tries to update a record with a non-unique username, 
-  the update action will return a 422 Unprocessable Entity status code with an error message
-  indicating that the username has already been taken.
-  '''
+  # The User model has a unique index on the username column.
+  # If a user tries to create a record with a non-unique username,
+  # the create action will return a 422 Unprocessable Entity status code with an error message
+  # indicating that the username has already been taken. Similarly,
+  # if a user tries to update a record with a non-unique username,
+  # the update action will return a 422 Unprocessable Entity status code with an error message
+  # indicating that the username has already been taken.
 
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user, only: %i[show update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity_error
@@ -50,9 +48,7 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find_by(username: params[:id])
 
-    unless @user
-      render json: { error: 'Record not found' }, status: :not_found
-    end
+    render json: { error: 'Record not found' }, status: :not_found unless @user
   end
 
   def user_params
