@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
   # The User model has a unique index on the username column.
   # If a user tries to create a record with a non-unique username,
   # the create action will return a 422 Unprocessable Entity status code with an error message
@@ -47,8 +47,8 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find_by(username: params[:id])
-
-    render json: { error: 'Record not found' }, status: :not_found unless @user
+    print @user
+    record_not_found unless @user
   end
 
   def user_params
