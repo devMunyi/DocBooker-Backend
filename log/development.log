@@ -2679,3 +2679,1068 @@ app/controllers/api/reservations_controller.rb:16:in `create'
   [1m[36mDoctor Create (1.0ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "email", "specialization", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sophia Patel"], ["email", "dr.sophia.patel@gmail.com"], ["specialization", " Psychiatrist"], ["picture", "https://www.phoenixmag.com/wp-content/uploads/2022/03/PHM0422TD17-1200x800.jpg"], ["created_at", "2023-02-24 20:00:56.311365"], ["updated_at", "2023-02-24 20:00:56.311365"]]
   [1m[36mTRANSACTION (11.0ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+Started GET "/" for 127.0.0.1 at 2023-02-27 10:18:36 +0000
+  
+ActiveRecord::NoDatabaseError (We could not find your database: booking_app_development. Which can be found in the database configuration file located at config/database.yml.
+
+To resolve this issue:
+
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+
+To create your database, run:
+
+        bin/rails db:create
+):
+  
+activerecord (7.0.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:81:in `rescue in new_client'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.4.2) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.4.2) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.4.2) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.4.2) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.4.2) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.4.2) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.2) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.2) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.2) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (2.0.0) lib/rack/cors.rb:102:in `call'
+railties (7.0.4.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-02-27 10:18:39 +0000
+  
+ActiveRecord::NoDatabaseError (We could not find your database: booking_app_development. Which can be found in the database configuration file located at config/database.yml.
+
+To resolve this issue:
+
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+
+To create your database, run:
+
+        bin/rails db:create
+):
+  
+activerecord (7.0.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:81:in `rescue in new_client'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.4.2) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.4.2) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.4.2) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.4.2) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.4.2) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.4.2) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.2) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.2) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.2) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (2.0.0) lib/rack/cors.rb:102:in `call'
+railties (7.0.4.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (2102.3ms)[0m  [1m[35mCREATE DATABASE "booking_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (1801.3ms)[0m  [1m[35mCREATE DATABASE "booking_app_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (5.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "doctors" CASCADE[0m
+  [1m[35m (84.0ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" bigserial primary key, "name" character varying, "email" character varying, "specialization" text, "picture" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "reservations" CASCADE[0m
+  [1m[35m (21.7ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "doctor_id" integer, "user_id" integer, "date" date, "details" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (16.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[35m (19.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (5.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230224093602)[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230223134017),
+(20230223234917),
+(20230224075846);
+
+[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-02-27 10:19:15.402682"], ["updated_at", "2023-02-27 10:19:15.402682"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "5b7917b3e34488ea59bbe0ce645c83c628bdfbf4"], ["created_at", "2023-02-27 10:19:15.424330"], ["updated_at", "2023-02-27 10:19:15.424330"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (5.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (6.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "doctors" CASCADE[0m
+  [1m[35m (111.1ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" bigserial primary key, "name" character varying, "email" character varying, "specialization" text, "picture" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (9.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "reservations" CASCADE[0m
+  [1m[35m (33.1ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "doctor_id" integer, "user_id" integer, "date" date, "details" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230224093602)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230223134017),
+(20230223234917),
+(20230224075846);
+
+[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-02-27 10:19:15.970038"], ["updated_at", "2023-02-27 10:19:15.970038"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2023-02-27 10:19:15.985746"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "5b7917b3e34488ea59bbe0ce645c83c628bdfbf4"], ["created_at", "2023-02-27 10:19:15.998303"], ["updated_at", "2023-02-27 10:19:15.998303"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "doctors" WHERE "doctors"."email" = $1 LIMIT $2[0m  [["email", "dr.rebecca.wong@gmail.com"], ["LIMIT", 1]]
+  [1m[36mDoctor Create (6.2ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "email", "specialization", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Rebecca Wong"], ["email", "dr.rebecca.wong@gmail.com"], ["specialization", " Cardiologist"], ["picture", "https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"], ["created_at", "2023-02-27 10:19:16.423298"], ["updated_at", "2023-02-27 10:19:16.423298"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "doctors" WHERE "doctors"."email" = $1 LIMIT $2[0m  [["email", "dr.mohammed.ali@gmail.com"], ["LIMIT", 1]]
+  [1m[36mDoctor Create (1.8ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "email", "specialization", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mohammed Ali"], ["email", "dr.mohammed.ali@gmail.com"], ["specialization", "Neurologist"], ["picture", "https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg?crop=0.66698xw:1xh;center,top&resize=1200:*"], ["created_at", "2023-02-27 10:19:16.467133"], ["updated_at", "2023-02-27 10:19:16.467133"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "doctors" WHERE "doctors"."email" = $1 LIMIT $2[0m  [["email", "dr.olivia.davis@gmail.com"], ["LIMIT", 1]]
+  [1m[36mDoctor Create (1.1ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "email", "specialization", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Olivia Davis"], ["email", "dr.olivia.davis@gmail.com"], ["specialization", "Dermatologist"], ["picture", "https://www.yourfreecareertest.com/wp-content/uploads/2018/01/how_to_become_a_doctor-300x200.jpg"], ["created_at", "2023-02-27 10:19:16.505080"], ["updated_at", "2023-02-27 10:19:16.505080"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "doctors" WHERE "doctors"."email" = $1 LIMIT $2[0m  [["email", "dr.ethan.lee@gmail.com"], ["LIMIT", 1]]
+  [1m[36mDoctor Create (0.7ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "email", "specialization", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ethan Lee"], ["email", "dr.ethan.lee@gmail.com"], ["specialization", " Pediatrician"], ["picture", "https://royalphnompenhhospital.com/royalpp/storage/app/uploads/2/2022-06-30/dr_sarisak_01.jpg"], ["created_at", "2023-02-27 10:19:16.516390"], ["updated_at", "2023-02-27 10:19:16.516390"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDoctor Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "doctors" WHERE "doctors"."email" = $1 LIMIT $2[0m  [["email", "dr.sophia.patel@gmail.com"], ["LIMIT", 1]]
+  [1m[36mDoctor Create (0.8ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "email", "specialization", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sophia Patel"], ["email", "dr.sophia.patel@gmail.com"], ["specialization", " Psychiatrist"], ["picture", "https://www.phoenixmag.com/wp-content/uploads/2022/03/PHM0422TD17-1200x800.jpg"], ["created_at", "2023-02-27 10:19:16.527230"], ["updated_at", "2023-02-27 10:19:16.527230"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2023-02-27 10:19:32 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/swank99/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/swank99/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 68.0ms | Allocations: 477)
+Completed 200 OK in 180ms (Views: 74.7ms | ActiveRecord: 0.0ms | Allocations: 3592)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-02-27 10:20:15 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-02-27 10:20:16 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/users" for 127.0.0.1 at 2023-02-27 10:20:39 +0000
+  
+Zeitwerk::NameError (expected file /mnt/c/Users/R/Desktop/Microverse/backend/Capstone module/projects/Capstone/booking-app/app/controllers/api/users_controller.rb to define constant Api::UsersController, but didn't
+
+      raise Zeitwerk::NameError.new(msg, cref.last)
+      ^^^^^):
+  
+zeitwerk (2.6.7) lib/zeitwerk/loader/callbacks.rb:25:in `on_file_autoloaded'
+zeitwerk (2.6.7) lib/zeitwerk/kernel.rb:31:in `require'
+activesupport (7.0.4.2) lib/active_support/inflector/methods.rb:280:in `const_get'
+activesupport (7.0.4.2) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (7.0.4.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (7.0.4.2) lib/action_dispatch/http/request.rb:90:in `controller_class_for'
+actionpack (7.0.4.2) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (7.0.4.2) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (7.0.4.2) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (7.0.4.2) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.6.2) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.2) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.2) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (2.0.0) lib/rack/cors.rb:102:in `call'
+railties (7.0.4.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/api/users" for 127.0.0.1 at 2023-02-27 10:20:45 +0000
+  
+ActionController::RoutingError (uninitialized constant Api::UsersController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/api/users" for 127.0.0.1 at 2023-02-27 10:20:48 +0000
+  
+ActionController::RoutingError (uninitialized constant Api::UsersController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "//api/users" for 127.0.0.1 at 2023-02-27 10:21:05 +0000
+  
+ActionController::RoutingError (uninitialized constant Api::UsersController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/api/users" for 127.0.0.1 at 2023-02-27 10:21:09 +0000
+  
+ActionController::RoutingError (uninitialized constant Api::UsersController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/api/users/1" for 127.0.0.1 at 2023-02-27 10:21:12 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/1"):
+  
+Started GET "/api/users" for 127.0.0.1 at 2023-02-27 10:21:17 +0000
+  
+ActionController::RoutingError (uninitialized constant Api::UsersController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/rails/info/routes?path=a" for 127.0.0.1 at 2023-02-27 10:22:38 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"a"}
+Completed 200 OK in 53ms (Views: 43.7ms | ActiveRecord: 0.0ms | Allocations: 2878)
+
+
+Started GET "/rails/info/routes?path=/" for 127.0.0.1 at 2023-02-27 10:22:40 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"/"}
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1548)
+
+
+Started GET "/rails/info/routes?path=/a" for 127.0.0.1 at 2023-02-27 10:22:40 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"/a"}
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 1442)
+
+
+Started GET "/rails/info/routes?path=/api" for 127.0.0.1 at 2023-02-27 10:22:40 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"/api"}
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 897)
+
+
+Started GET "/rails/info/routes?path=/api" for 127.0.0.1 at 2023-02-27 10:22:41 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"/api"}
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 894)
+
+
+Started GET "/rails/info/routes?path=/api/" for 127.0.0.1 at 2023-02-27 10:22:42 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"/api/"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 896)
+
+
+Started GET "/rails/info/routes?path=/api/user" for 127.0.0.1 at 2023-02-27 10:22:45 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"/api/user"}
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 882)
+
+
+Started GET "/rails/info/routes?path=/api/users" for 127.0.0.1 at 2023-02-27 10:22:46 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"/api/users"}
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 918)
+
+
+Started GET "/rails/info/routes?path=/api/users" for 127.0.0.1 at 2023-02-27 10:22:59 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"/api/users"}
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 909)
+
+
+Started GET "//api/users" for 127.0.0.1 at 2023-02-27 10:23:02 +0000
+  
+ActionController::RoutingError (uninitialized constant Api::UsersController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/users" for 127.0.0.1 at 2023-02-27 10:23:08 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/api/users" for 127.0.0.1 at 2023-02-27 10:23:13 +0000
+  
+ActionController::RoutingError (uninitialized constant Api::UsersController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/api/users" for 127.0.0.1 at 2023-02-27 10:25:45 +0000
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:17:in `index'
+Completed 200 OK in 99ms (Views: 77.3ms | ActiveRecord: 20.0ms | Allocations: 5864)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2023-02-27 10:25:49 +0000
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:17:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 711)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2023-02-27 10:25:55 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/1"):
+  
+Started GET "/api/users/sam" for 127.0.0.1 at 2023-02-27 10:26:00 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/sam"):
+  
+Started GET "/api/users/sam" for 127.0.0.1 at 2023-02-27 10:29:10 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/sam"):
+  
+Started GET "/api/users" for 127.0.0.1 at 2023-02-27 10:29:13 +0000
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:17:in `index'
+Completed 200 OK in 9ms (Views: 2.4ms | ActiveRecord: 0.5ms | Allocations: 2071)
+
+
+Started GET "/" for ::1 at 2023-02-27 10:34:26 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/swank99/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/swank99/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.7ms | Allocations: 283)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 882)
+
+
+Started GET "/" for ::1 at 2023-02-27 10:37:01 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/swank99/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/swank99/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 15)
+Completed 200 OK in 203ms (Views: 193.7ms | Allocations: 245)
+
+
+Started GET "/api/users/username" for ::1 at 2023-02-27 10:44:48 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/username"):
+  
+Started POST "//api/users" for ::1 at 2023-02-27 10:44:55 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"username"=>"salim", "user"=>{"username"=>"salim"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:27:in `create'
+  [1m[36mUser Exists? (11.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:27:in `create'
+  [1m[36mUser Create (7.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "salim"], ["created_at", "2023-02-27 10:44:56.215765"], ["updated_at", "2023-02-27 10:44:56.215765"]]
+  ↳ app/controllers/api/users_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:27:in `create'
+Completed 201 Created in 242ms (Views: 1.9ms | ActiveRecord: 226.9ms | Allocations: 7868)
+
+
+Started GET "/api/users/username" for ::1 at 2023-02-27 10:45:01 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/username"):
+  
+Started POST "//api/users" for ::1 at 2023-02-27 10:45:21 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"username"=>"salim", "user"=>{"username"=>"salim"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:27:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:27:in `create'
+Completed 422 Unprocessable Entity in 268ms (Views: 0.3ms | ActiveRecord: 2.8ms | Allocations: 5272)
+
+
+Started POST "//api/users" for ::1 at 2023-02-27 10:45:47 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"username"=>"salim", "user"=>{"username"=>"salim"}}
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:27:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:27:in `create'
+Completed 422 Unprocessable Entity in 20ms (Views: 0.4ms | ActiveRecord: 4.0ms | Allocations: 2488)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2023-02-27 10:45:54 +0000
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:17:in `index'
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 1.3ms | Allocations: 861)
+
+
+Started GET "/api/users/username" for ::1 at 2023-02-27 10:46:02 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/username"):
+  
+Started GET "/api/users/salim" for 127.0.0.1 at 2023-02-27 10:46:35 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/salim"):
+  
+Started GET "/api/users/salim" for 127.0.0.1 at 2023-02-27 10:46:50 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/salim"):
+  
+Started GET "/api/users" for 127.0.0.1 at 2023-02-27 10:46:52 +0000
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:17:in `index'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.6ms | Allocations: 762)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2023-02-27 10:46:58 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/1"):
+  
+Started GET "/api/users/1" for 127.0.0.1 at 2023-02-27 10:53:37 +0000
+Started GET "/api/users/salim" for 127.0.0.1 at 2023-02-27 10:53:37 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/1"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/salim"):
+  
+Started GET "/api/users/salim" for 127.0.0.1 at 2023-02-27 10:57:28 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/salim"):
+  
+Started GET "/api/users/username" for ::1 at 2023-02-27 10:58:04 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/username"):
+  
+Started POST "//api/users" for ::1 at 2023-02-27 10:58:28 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"username"=>"salim", "user"=>{"username"=>"salim"}}
+  [1m[36mTRANSACTION (14.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:29:in `create'
+  [1m[36mUser Exists? (6.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:29:in `create'
+Completed 422 Unprocessable Entity in 120ms (Views: 0.5ms | ActiveRecord: 45.9ms | Allocations: 7520)
+
+
+Started GET "/api/users/username" for ::1 at 2023-02-27 10:59:23 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/username"):
+  
+Started GET "/api/users/username" for ::1 at 2023-02-27 11:00:03 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/username"):
+  
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:00:08 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/salim"):
+  
+Started GET "/rails/info/routes?path=a" for ::1 at 2023-02-27 11:00:13 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"a"}
+Completed 200 OK in 121ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 3871)
+
+
+Started GET "/rails/info/routes?path=api" for ::1 at 2023-02-27 11:00:13 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"api"}
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 929)
+
+
+Started GET "/rails/info/routes?path=api" for ::1 at 2023-02-27 11:00:14 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"api"}
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 919)
+
+
+Started GET "/rails/info/routes?path=api/" for ::1 at 2023-02-27 11:00:14 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"api/"}
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 925)
+
+
+Started GET "/rails/info/routes?path=api/user" for ::1 at 2023-02-27 11:00:15 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"api/user"}
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 909)
+
+
+Started GET "/rails/info/routes?path=api/user" for ::1 at 2023-02-27 11:00:17 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"api/user"}
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 905)
+
+
+Started GET "/rails/info/routes?path=api/users" for ::1 at 2023-02-27 11:00:19 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"api/users"}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 943)
+
+
+Started GET "/rails/info/routes?path=api/users" for ::1 at 2023-02-27 11:00:19 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"api/users"}
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 935)
+
+
+Started GET "/rails/info/routes?path=api/users/" for ::1 at 2023-02-27 11:00:23 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"api/users/"}
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 880)
+
+
+Started GET "/rails/info/routes?path=api/users/:" for ::1 at 2023-02-27 11:00:33 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"api/users/:"}
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 863)
+
+
+Started GET "/rails/info/routes?path=api/users/" for ::1 at 2023-02-27 11:00:34 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"api/users/"}
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 880)
+
+
+Started GET "/rails/info/routes?path=api/users" for ::1 at 2023-02-27 11:00:36 +0000
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"api/users"}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 937)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:03:07 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:51:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 28ms (Views: 1.1ms | ActiveRecord: 7.2ms | Allocations: 4047)
+
+
+Started GET "/favicon.ico" for ::1 at 2023-02-27 11:03:08 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:03:11 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:51:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 5ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 910)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2023-02-27 11:03:15 +0000
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:17:in `index'
+Completed 200 OK in 33ms (Views: 17.5ms | ActiveRecord: 15.2ms | Allocations: 3640)
+
+
+Started GET "/api/users/1" for ::1 at 2023-02-27 11:03:20 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:51:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 8ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 848)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:03:40 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:51:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 717)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:04:15 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:51:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 12ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 2456)
+
+
+Started GET "/api/users/1" for ::1 at 2023-02-27 11:04:18 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:51:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 35ms (Views: 0.3ms | ActiveRecord: 8.9ms | Allocations: 734)
+
+
+Started GET "/api/users/1" for ::1 at 2023-02-27 11:05:17 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:51:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 36ms (Views: 0.7ms | ActiveRecord: 10.7ms | Allocations: 4047)
+
+
+Started GET "/api/users/1" for ::1 at 2023-02-27 11:05:19 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:51:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 10ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 744)
+
+
+Started GET "/api/users/1" for ::1 at 2023-02-27 11:05:20 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:51:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 6ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 730)
+
+
+Started GET "/api/users/1" for ::1 at 2023-02-27 11:05:21 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:51:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 5ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 716)
+
+
+Started GET "/api/users/1" for ::1 at 2023-02-27 11:07:09 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"username"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:50:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 24ms (Views: 0.9ms | ActiveRecord: 5.3ms | Allocations: 2504)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:07:13 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"username"=>"salim"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:50:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:21:in `show'
+Completed 404 Not Found in 60ms (Views: 0.3ms | ActiveRecord: 11.0ms | Allocations: 5690)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:07:39 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#show as HTML
+  Parameters: {"username"=>"salim"}
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:50:in `set_user'
+  [1m[36mUser Load (26.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:21:in `show'
+Completed 404 Not Found in 176ms (Views: 0.9ms | ActiveRecord: 76.5ms | Allocations: 9140)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:08:24 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"username"=>"salim"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:21:in `show'
+Completed 404 Not Found in 21ms (Views: 0.3ms | ActiveRecord: 6.6ms | Allocations: 3983)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:11:29 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#show as HTML
+  Parameters: {"username"=>"salim"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:21:in `show'
+Completed 404 Not Found in 53ms (Views: 0.8ms | ActiveRecord: 13.6ms | Allocations: 9130)
+
+
+Started GET "/api/users/username" for ::1 at 2023-02-27 11:11:37 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"username"=>"username"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:52:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 5ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 616)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:12:53 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"username"=>"salim"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:21:in `show'
+Completed 404 Not Found in 9ms (Views: 0.6ms | ActiveRecord: 1.4ms | Allocations: 1071)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:13:00 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"username"=>"salim"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:21:in `show'
+Completed 404 Not Found in 10ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 1054)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2023-02-27 11:13:04 +0000
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:17:in `index'
+Completed 200 OK in 19ms (Views: 14.6ms | ActiveRecord: 4.3ms | Allocations: 958)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2023-02-27 11:13:27 +0000
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:17:in `index'
+Completed 200 OK in 39ms (Views: 12.7ms | ActiveRecord: 15.5ms | Allocations: 3468)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:13:30 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:52:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 9ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 828)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:13:53 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (12.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:52:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 44ms (Views: 0.8ms | ActiveRecord: 9.0ms | Allocations: 4047)
+
+
+Started GET "/api/users/1" for ::1 at 2023-02-27 11:13:57 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:52:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 13ms (Views: 0.4ms | ActiveRecord: 3.3ms | Allocations: 744)
+
+
+Started GET "/api/users/1" for ::1 at 2023-02-27 11:15:16 +0000
+  
+SyntaxError (/mnt/c/Users/R/Desktop/Microverse/backend/Capstone module/projects/Capstone/booking-app/config/routes.rb:5: syntax error, unexpected ':', expecting `end'
+     only: [:index, :show, :new, :creat...
+         ^
+/mnt/c/Users/R/Desktop/Microverse/backend/Capstone module/projects/Capstone/booking-app/config/routes.rb:5: syntax error, unexpected `do', expecting `end'
+...index, :show, :new, :create] do
+...                             ^~
+/mnt/c/Users/R/Desktop/Microverse/backend/Capstone module/projects/Capstone/booking-app/config/routes.rb:9: syntax error, unexpected `end', expecting end-of-input
+    end
+    ^~~
+):
+  
+config/routes.rb:5: syntax error, unexpected ':', expecting `end'
+config/routes.rb:5: syntax error, unexpected `do', expecting `end'
+config/routes.rb:9: syntax error, unexpected `end', expecting end-of-input
+config/routes.rb:5: syntax error, unexpected ':', expecting `end'
+config/routes.rb:5: syntax error, unexpected `do', expecting `end'
+config/routes.rb:9: syntax error, unexpected `end', expecting end-of-input
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:15:20 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/salim"):
+  
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:15:32 +0000
+  
+SyntaxError (/mnt/c/Users/R/Desktop/Microverse/backend/Capstone module/projects/Capstone/booking-app/config/routes.rb:5: syntax error, unexpected ':', expecting `end'
+     only: [:index, :show, :new, :creat...
+         ^
+/mnt/c/Users/R/Desktop/Microverse/backend/Capstone module/projects/Capstone/booking-app/config/routes.rb:5: syntax error, unexpected `do', expecting `end'
+...index, :show, :new, :create] do
+...                             ^~
+/mnt/c/Users/R/Desktop/Microverse/backend/Capstone module/projects/Capstone/booking-app/config/routes.rb:9: syntax error, unexpected `end', expecting end-of-input
+    end
+    ^~~
+):
+  
+config/routes.rb:5: syntax error, unexpected ':', expecting `end'
+config/routes.rb:5: syntax error, unexpected `do', expecting `end'
+config/routes.rb:9: syntax error, unexpected `end', expecting end-of-input
+config/routes.rb:5: syntax error, unexpected ':', expecting `end'
+config/routes.rb:5: syntax error, unexpected `do', expecting `end'
+config/routes.rb:9: syntax error, unexpected `end', expecting end-of-input
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:15:34 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/salim"):
+  
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:15:36 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/salim"):
+  
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:15:37 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/salim"):
+  
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:15:38 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/salim"):
+  
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:16:04 +0000
+  
+NameError (undefined local variable or method `params' for #<ActionDispatch::Routing::Mapper:0x00007f2aadba60b0 @set=#<ActionDispatch::Routing::RouteSet:0x00007f2ab4f340e0>, @draw_paths=[#<Pathname:/mnt/c/Users/R/Desktop/Microverse/backend/Capstone module/projects/Capstone/booking-app/config/routes>], @scope=#<ActionDispatch::Routing::Mapper::Scope:0x00007f2aadba6060 @hash={:path_names=>{:new=>"new", :edit=>"edit"}}, @parent=#<ActionDispatch::Routing::Mapper::Scope:0x00007f2ab4d17bb8 @hash=nil, @parent=nil, @scope_level=nil>, @scope_level=nil>, @concerns={}>
+
+    resources :users, params[:username], only: [:index, :show, :new, :create] do
+                      ^^^^^^):
+  
+config/routes.rb:3:in `block (2 levels) in <main>'
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:16:06 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/salim"):
+  
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:16:07 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/salim"):
+  
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:17:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:52:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 33ms (Views: 0.9ms | ActiveRecord: 7.0ms | Allocations: 4047)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:17:11 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:52:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 5ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 744)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:17:48 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#show as HTML
+  Parameters: {"username"=>"salim"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:21:in `show'
+Completed 404 Not Found in 57ms (Views: 0.8ms | ActiveRecord: 13.8ms | Allocations: 9147)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:17:49 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"username"=>"salim"}
+  [1m[36mUser Load (8.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:52:in `set_user'
+  [1m[36mUser Load (18.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:21:in `show'
+Completed 404 Not Found in 38ms (Views: 0.3ms | ActiveRecord: 27.0ms | Allocations: 1082)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:20:24 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"username"=>"salim"}
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:52:in `set_user'
+  [1m[36mUser Load (11.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:21:in `show'
+Completed 404 Not Found in 24ms (Views: 0.2ms | ActiveRecord: 17.4ms | Allocations: 1054)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:22:56 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Completed 200 OK in 62ms (Views: 1.5ms | ActiveRecord: 30.0ms | Allocations: 3593)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:22:59 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 651)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:23:04 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 637)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:27:27 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 649)
+
+
+Started GET "/api/users/moonman" for ::1 at 2023-02-27 11:27:32 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"moonman"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "moonman"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 591)
+
+
+Started GET "/api/users/moon" for ::1 at 2023-02-27 11:28:00 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"moon"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "moon"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 4ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 577)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-27 11:29:33 +0000
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Completed 200 OK in 16ms (Views: 0.7ms | ActiveRecord: 5.8ms | Allocations: 3493)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2023-02-27 11:29:35 +0000
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:17:in `index'
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.7ms | Allocations: 804)
+
+
