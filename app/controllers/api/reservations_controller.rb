@@ -1,4 +1,4 @@
-class ReservationsController < ApplicationController
+class Api::ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[show update destroy]
 
   def index
@@ -11,13 +11,12 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(reservation_params)
-    @reservation.user_id = params[:user_id]
-    @reservation.doctor_id = params[:doctor_id]
-    if @reservation.save
-      render json: @reservation, status: :created
+    @new_reservation = Reservation.new(reservation_params)
+
+    if @new_reservation.save!
+      render json: @new_reservation, status: :created
     else
-      render json: @reservation.errors, status: :unprocessable_entity
+      render json: @new_reservation.errors, status: :unprocessable_entity
     end
   end
 
