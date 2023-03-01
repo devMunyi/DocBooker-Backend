@@ -4,15 +4,14 @@ class Api::ReservationsController < ApplicationController
   def index
     user_id = params[:user_id]
     doctor_id = params[:doctor_id]
-  
     reservations = if doctor_id.present? && doctor_id.to_i.positive?
-                     Reservation.where(user_id: user_id, doctor_id: doctor_id).joins(:doctor)
+                     Reservation.where(user_id:, doctor_id:).joins(:doctor)
                    else
-                     Reservation.where(user_id: user_id).joins(:doctor)
+                     Reservation.where(user_id:).joins(:doctor)
                    end
-  
-    render json: reservations.select('reservations.id', 'reservations.date', 'doctors.name AS doctor_name', 'doctors.specialization AS specialization', 'reservations.user_id')
-  end 
+    render json: reservations.select('reservations.id', 'reservations.date', 'doctors.name AS doctor_name',
+                                     'doctors.specialization AS specialization', 'reservations.user_id')
+  end
 
   def show
     render json: @reservation
