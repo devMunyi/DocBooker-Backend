@@ -18,7 +18,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    render json: @user
+    render json: @user.username
   end
 
   def create

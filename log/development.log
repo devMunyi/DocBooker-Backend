@@ -3744,3 +3744,175 @@ Processing by Api::UsersController#index as HTML
 Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.7ms | Allocations: 804)
 
 
+Started GET "/api/users/salim" for ::1 at 2023-02-28 09:02:03 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (19.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Completed 200 OK in 334ms (Views: 9.8ms | ActiveRecord: 28.1ms | Allocations: 8553)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-28 09:02:06 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Completed 200 OK in 14ms (Views: 1.3ms | ActiveRecord: 1.1ms | Allocations: 724)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-28 09:02:06 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 635)
+
+
+Started GET "/api/users/salima" for ::1 at 2023-02-28 09:08:00 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salima"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salima"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 25ms (Views: 2.2ms | ActiveRecord: 2.6ms | Allocations: 614)
+
+
+Started GET "/api/users/salima" for ::1 at 2023-02-28 09:08:52 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salima"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salima"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 4ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 590)
+
+
+Started GET "/api/users/salima" for ::1 at 2023-02-28 09:09:01 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salima"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salima"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 590)
+
+
+Started GET "/api/users/salima" for ::1 at 2023-02-28 09:09:02 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salima"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salima"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 307ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 590)
+
+
+Started GET "/api/users/salima" for ::1 at 2023-02-28 09:09:03 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salima"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salima"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 577)
+
+
+Started GET "/api/users/salima" for ::1 at 2023-02-28 09:09:03 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salima"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salima"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 577)
+
+
+Started GET "/api/users/salima" for ::1 at 2023-02-28 09:09:03 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salima"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salima"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 577)
+
+
+Started GET "/api/users/salima" for ::1 at 2023-02-28 09:09:03 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salima"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salima"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 577)
+
+
+Started GET "/api/users/salima" for ::1 at 2023-02-28 09:09:04 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salima"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salima"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 577)
+
+
+Started GET "/api/users/salima" for ::1 at 2023-02-28 09:09:04 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salima"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salima"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 577)
+
+
+Started GET "/api/users/salima" for ::1 at 2023-02-28 09:09:04 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salima"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salima"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 577)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-28 09:22:03 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Completed 200 OK in 328ms (Views: 19.9ms | ActiveRecord: 59.1ms | Allocations: 3577)
+
+
+Started GET "/api/users/" for ::1 at 2023-02-28 09:22:29 +0000
+Processing by Api::UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:17:in `index'
+Completed 200 OK in 42ms (Views: 29.6ms | ActiveRecord: 0.6ms | Allocations: 834)
+
+
+Started GET "/api/users/" for ::1 at 2023-02-28 09:22:35 +0000
+Processing by Api::UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:17:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.6ms | Allocations: 767)
+
+
+Started GET "/api/users/a" for ::1 at 2023-02-28 09:28:43 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"a"}
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "a"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 307ms (Views: 6.9ms | ActiveRecord: 66.0ms | Allocations: 3371)
+
+
+Started GET "/api/users/m" for ::1 at 2023-02-28 09:30:01 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"m"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "m"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Filter chain halted as :set_user rendered or redirected
+Completed 404 Not Found in 47ms (Views: 1.1ms | ActiveRecord: 1.4ms | Allocations: 577)
+
+
+Started GET "/api/users/salim" for ::1 at 2023-02-28 09:30:06 +0000
+Processing by Api::UsersController#show as */*
+  Parameters: {"id"=>"salim"}
+  [1m[36mUser Load (24.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "salim"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:49:in `set_user'
+Completed 200 OK in 205ms (Views: 26.3ms | ActiveRecord: 24.5ms | Allocations: 635)
+
+
