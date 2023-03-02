@@ -1,5 +1,5 @@
 class Api::ReservationsController < ApplicationController
-  before_action :set_reservation, only: %i[show update destroy]
+  before_action :set_reservation, only: %i[update destroy]
 
   def index
     user_id = params[:user_id]
@@ -14,7 +14,9 @@ class Api::ReservationsController < ApplicationController
   end
 
   def show
-    render json: @reservation
+    reservation = Reservation.where(id: params[:id]).joins(:doctor)
+    render json: reservation.select('reservations.id', 'reservations.date', 'doctors.name AS doctorName',
+                                    'doctors.specialization', 'reservations.user_id AS userId')[0]
   end
 
   def create
