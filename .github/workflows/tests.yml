@@ -16,4 +16,6 @@ jobs:
           [ -f Gemfile ] && bundle
           gem install --no-document rspec -v '>=3.0, < 4.0'
       - name: RSpec Report
+        run: rails db:migrate RAILS_ENV=tes
         run: rspec --force-color --format documentation
+        run: bundle exec rspec
