@@ -1,11 +1,14 @@
-name: Tests
-
-on: pull_request
-
 jobs:
   rspec:
     name: RSpec
     runs-on: ubuntu-22.04
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: myapp_test
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-ruby@v1
@@ -16,4 +19,4 @@ jobs:
           [ -f Gemfile ] && bundle
           gem install --no-document rspec -v '>=3.0, < 4.0'
       - name: RSpec Report
-        run: bundle exec rspec --force-color --format documentation
+        run: bundle exec rspec --format documentation
