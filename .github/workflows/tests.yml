@@ -17,5 +17,4 @@ jobs:
           gem install --no-document rspec -v '>=3.0, < 4.0'
       - name: RSpec Report
         run: rails db:migrate RAILS_ENV=test
-        run: rspec --force-color --format documentation
-        # run: bundle exec rspec
+        run: bundle exec rspec
