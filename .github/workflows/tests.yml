@@ -1,33 +1,45 @@
-name: Tests
+name: CI
 
-on: pull_request
+on: [push]
 
 jobs:
-  rspec:
-    name: RSpec
-    runs-on: ubuntu-22.04
-    services:
-      postgres:
-        image: postgres:latest
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: test_db
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-ruby@v1
-        with:
-          ruby-version: 3.1.x
-      - name: Setup RSpec
-        run: |
-          bundle install --jobs 4 --retry 3 --without production
-          gem install --no-document rspec -v '>=3.0, < 4.0'
-      - name: RSpec Report
-        run: bundle exec rspec --force-color --format documentation
+    - uses: actions/checkout@v2
+
+    - name: Set up Ruby 2.7
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.7.x
+
+    - name: Set up PostgreSQL
+      uses: docker/setup-postgres@v1
+      with:
+        postgres-version: '12'
+
+    - name: Set Environment Variables
+      env:
+        PSQL_USERNAME: myusername
+        PSQL_PASSWORD: mypassword
+        PSQL_HOST: localhost
+      run: |
+        echo "export PSQL_USERNAME=$PSQL_USERNAME" >> $GITHUB_ENV
+        echo "export PSQL_PASSWORD=$PSQL_PASSWORD" >> $GITHUB_ENV
+        echo "export PSQL_HOST=$PSQL_HOST" >> $GITHUB_ENV
+
+    - name: Install Dependencies
+      run: bundle install --jobs 4 --retry 3
+
+    - name: Create and Migrate Database
+      env:
+        RAILS_ENV: test
+      run: |
+        bundle exec rails db:create db:migrate
+
+    - name: Run Tests
+      env:
+        RAILS_ENV: test
+      run: |
+        bundle exec rspec
