@@ -34,3 +34,5 @@
 log/development.log
 
 tmp/cache/bootsnap/load-path-cache
+
+.env
