@@ -15,8 +15,12 @@ class Api::ReservationsController < ApplicationController
 
   def show
     reservation = Reservation.where(id: params[:id]).joins(:doctor)
-    render json: reservation.select('reservations.id', 'reservations.date', 'doctors.name AS doctorName',
-                                    'doctors.specialization', 'reservations.user_id AS userId')[0]
+    render json: reservation.select('reservations.id',
+                                    'reservations.date',
+                                    'doctors.name AS doctorName',
+                                    'doctors.specialization',
+                                    'doctors.id AS doctorId',
+                                    'reservations.user_id AS userId').first
   end
 
   def create
