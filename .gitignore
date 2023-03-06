@@ -30,3 +30,9 @@
 
 # Ignore local variables with database credentials fro development and test
 /config/local_env.yml
+
+log/development.log
+
+tmp/cache/bootsnap/load-path-cache
+
+.env
