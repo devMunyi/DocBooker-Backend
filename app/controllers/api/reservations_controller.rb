@@ -19,6 +19,7 @@ class Api::ReservationsController < ApplicationController
                                     'reservations.date',
                                     'doctors.name AS doctorName',
                                     'doctors.specialization',
+                                    'doctors.picture AS doctorpicture',
                                     'doctors.id AS doctorId',
                                     'reservations.user_id AS userId').first
   end
