@@ -145,14 +145,27 @@ paths:
   "/api/users":
     get:
       summary: list users
+      tags:
+      - Users
       responses:
         '200':
           description: successful
     post:
       summary: create user
+      parameters: []
       responses:
-        '200':
-          description: successful
+        '201':
+          description: user created
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+              required:
+              - username
   "/api/users/{id}":
     parameters:
     - name: id
