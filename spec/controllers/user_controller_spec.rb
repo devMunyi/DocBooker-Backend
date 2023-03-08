@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'swagger_helper'
 
 RSpec.describe Api::UsersController, type: :controller do
   describe 'GET #index' do

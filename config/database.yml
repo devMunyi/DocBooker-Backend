@@ -21,8 +21,8 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: <%= ENV["PSQL_HOST"] %>
-  # username: <%= ENV["PSQL_USERNAME"] %>
-  # password: <%= ENV["PSQL_PASSWORD"] %>
+  username: <%= ENV["PSQL_USERNAME"] %>
+  password: <%= ENV["PSQL_PASSWORD"] %>
 
 development:
   <<: *default
