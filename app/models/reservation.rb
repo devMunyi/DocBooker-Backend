@@ -8,7 +8,7 @@ class Reservation < ApplicationRecord
   private
 
   def date_cannot_be_in_the_past
-    return if date >= Date.today
+    return if date.blank? || date >= Date.today
 
     errors.add(:date, "can't be in the past")
   end
