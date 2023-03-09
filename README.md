@@ -19,7 +19,6 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -96,15 +95,20 @@ Install this project with:
 
 ### Usage
 
-To run the project, execute the following command:
+- To run the project follow the instructions below:
 
-You can find the React Frontend client at [React_client](https://github.com/RayhanTabase/hello-react-front-end)
+- You can find the React Frontend client at [React_client](https://github.com/RayhanTabase/hello-react-front-end)
 
-Configure PostgreSQL database in your project in the project directory:
+- Configure PostgreSQL database in your project in the project directory:
 
 `config/database.yml`
 
-Start a local server running the command:
+- Then run the following command to setup the database:
+```
+rails db:create, rails db:migrate, rails db:seed
+```
+
+- Start a local server running the command:
 
 `rails s`
 
@@ -113,7 +117,10 @@ Start a local server running the command:
 
 To run tests, run the following command:
 
-`bundle exec rspec`
+```
+bundle exec rspec ./spec/requests
+bundle exec rspec ./spec/controllers
+```
 
 
 ### Deployment
@@ -146,9 +153,8 @@ Example:
 
 👤 **Julius**
 
-- GitHub: []()
-- LinkedIn: []()
-
+- GitHub: [@j-tee](https://github.com/j-tee)
+- LinkedIn: [Julius Tetteh](https://www.linkedin.com/in/julius-tetteh)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -186,20 +192,6 @@ Give a ⭐️ if you like this project!
 I would like to thank:
 - Microverse for providing an excellent curriculum that has helped me enhance my skills in software development.
 - Code Reviewers for their valuable feedback and guidance throughout my learning journey.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
