@@ -19,6 +19,7 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
+- [Kanban Board](#kanban_board)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -192,6 +193,19 @@ Give a ⭐️ if you like this project!
 I would like to thank:
 - Microverse for providing an excellent curriculum that has helped me enhance my skills in software development.
 - Code Reviewers for their valuable feedback and guidance throughout my learning journey.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- Kanban Board -->
+
+## Kanban Board <a name="kanban_board"></a>
+
+- [Kanban Board](https://github.com/users/j-tee/projects/5/views/1)
+
+- Team of 3 members
+
+- Initial Screenshot
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
