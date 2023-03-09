@@ -204,7 +204,7 @@ I would like to thank:
 
 - Team of 3 members
 
-- Initial Screenshot
+- ![Screenshot](https://user-images.githubusercontent.com/5064641/220668473-0516ef00-93e7-4a4c-a077-ac8cbc5c500a.png)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
