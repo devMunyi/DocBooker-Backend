@@ -26,4 +26,11 @@
 !/tmp/storage/.keep
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+./config/master.key
+
+# Ignore local variables with database credentials fro development and test
+/config/local_env.yml
+
+log/
+tmp/
+.env
