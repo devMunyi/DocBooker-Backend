@@ -27,10 +27,11 @@ class Api::ReservationsController < ApplicationController
   def create
     @new_reservation = Reservation.new(reservation_params)
 
-    if @new_reservation.save!
+    begin
+      @new_reservation.save!
       render json: @new_reservation, status: :created
-    else
-      render json: @new_reservation.errors, status: :unprocessable_entity
+    rescue ActiveRecord::RecordInvalid => e
+      render json: { message: e.record.errors.full_messages.join(', ') }, status: :unprocessable_entity
     end
   end
 
