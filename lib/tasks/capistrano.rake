@@ -1,4 +1,4 @@
-Rake::Task["assets:precompile"]
+Rake::Task["assets:precompile"].clear
 
 namespace :assets do
   task 'precompile' do
