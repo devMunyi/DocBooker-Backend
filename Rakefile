@@ -5,4 +5,8 @@ require_relative "config/application"
 
 Rails.application.load_tasks
 
-Rake::Task["assets:precompile"].clear if Rake::Task.task_defined?("assets:precompile")
+Rake::Task["assets:precompile"].clear
+   namespace :assets do
+     task 'precompile' do
+     puts "Not pre-compiling assets..."
+end
