@@ -25,7 +25,7 @@
 
 # 📖 [DocBooker Backend] <a name="about-project"></a>
 
-> A Ruby on Rails backend is created with resources for users, doctors, and reservations, and served as API endpoints to a Frontend client application that enables users to schedule appointments with doctors.
+> A Ruby on Rails backend created with resources for users, doctors, and reservations, and served as API endpoints to a Frontend client application that enables users to schedule appointments with doctors.
 
 ## 🛠 Built With <a name="built-with"></a>
 
