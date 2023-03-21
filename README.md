@@ -13,7 +13,6 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -24,17 +23,20 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [booking-app ] <a name="about-project"></a>
+# 📖 [DocBooker Backend] <a name="about-project"></a>
 
-> In this application we have built a rails backend for a user model, doctors model ,and a reservations model to support a front end client for an application which allows users to book appointments with doctors
-
-**[booking-app]** is an application which allows users to book appointments with doctors.
+> Ruby on rails Backend for a user model, doctors model ,and a reservations model to support a front end client for an application which allows users to book appointments with doctors
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> This application was built using Ruby on Rails
+<details>
+<summary>Server</summary>
+  <ul>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+  </ul>
+</details>
 
 <details>
 <summary>Database</summary>
@@ -57,7 +59,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+- [Live Link](https://booking-backend-e3gn.onrender.com/api)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -69,11 +71,11 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+In order to run this project you need following installed:
 
-- Have ruby installed
-- Have node installed
-- Have rails installed
+- Ruby
+- Ruby on Rails
+- Node
 
 ### Setup
 
@@ -122,19 +124,6 @@ To run tests, run the following command:
 bundle exec rspec ./spec/requests
 bundle exec rspec ./spec/controllers
 ```
-
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
