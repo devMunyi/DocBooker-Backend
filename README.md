@@ -25,7 +25,7 @@
 
 # 📖 [DocBooker Backend] <a name="about-project"></a>
 
-> Ruby on rails Backend for a user model, doctors model ,and a reservations model to support a front end client for an application which allows users to book appointments with doctors
+> Ruby on rails Backend for a user model, doctors model ,and a reservations model to support a front end client for an application which allows users to book appointments with doctors.
 
 ## 🛠 Built With <a name="built-with"></a>
 
