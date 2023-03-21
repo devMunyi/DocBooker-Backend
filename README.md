@@ -59,7 +59,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Link](https://booking-backend-e3gn.onrender.com/api)
+- [Live Link](https://booking-backend-e3gn.onrender.com/api/users)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
