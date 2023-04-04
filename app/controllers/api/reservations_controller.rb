@@ -1,6 +1,9 @@
 class Api::ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[update destroy]
 
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity_error
+
   def index
     user_id = params[:user_id]
     doctor_id = params[:doctor_id]
@@ -52,9 +55,18 @@ class Api::ReservationsController < ApplicationController
 
   def set_reservation
     @reservation = Reservation.find(params[:id])
+    record_not_found unless @reservation
   end
 
   def reservation_params
     params.require(:reservation).permit(:doctor_id, :user_id, :date, :details)
+  end
+
+  def record_not_found
+    render json: { error: 'Record not found' }, status: :not_found
+  end
+
+  def unprocessable_entity_error(exception)
+    render json: { errors: exception.record.errors.full_messages }, status: :unprocessable_entity
   end
 end
